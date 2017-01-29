@@ -20,7 +20,7 @@ class EggCounterController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Egg Tracker"
+        self.title = "Tracker"
         view.backgroundColor = .white
         
         let dateLabel = UILabel(frame: CGRect(x: 0, y: 100, width: 200, height: 20))

@@ -12,3 +12,6 @@ Unfortunately, the only graph that currently works is the egg production graph, 
 
 The Android version of the application, coded by Danny Yang, Larry Tang, and Eric Tang, can be found here:
 https://github.com/yangdanny97/CoopMaster
+
+The website created around the 2 applications can be found here:
+https://yangdanny97.github.io/CoopMaster/
