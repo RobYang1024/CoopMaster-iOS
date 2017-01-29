@@ -186,15 +186,29 @@ class EggCounterController: UIViewController, UITextFieldDelegate {
     
     func viewController2()
     {
-        navigationController?.pushViewController(ViewController(), animated: true)
+        if ((insertNumberField.text?.isEmpty)! || (feedField.text?.isEmpty)! || (waterField.text?.isEmpty)! || (temperatureField.text?.isEmpty)! || (humidityField.text?.isEmpty)!)
+        {
+            // create the alert
+            let alert = UIAlertController(title: "", message: "Please fill in all forms.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+        }
+        else
+        {
+            navigationController?.pushViewController(ViewController(), animated: true)
+        }
     }
     
     func viewController()
     {
-        if (insertNumberField.text?.isEmpty)!
+        if ((insertNumberField.text?.isEmpty)! || (feedField.text?.isEmpty)! || (waterField.text?.isEmpty)! || (temperatureField.text?.isEmpty)! || (humidityField.text?.isEmpty)!)
         {
             // create the alert
-            let alert = UIAlertController(title: "", message: "Please enter number of eggs.", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "", message: "Please fill in all forms.", preferredStyle: UIAlertControllerStyle.alert)
             
             // add an action (button)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
