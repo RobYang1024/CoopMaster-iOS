@@ -13,6 +13,8 @@ class ViewController: UIViewController {
 
     var dateStringArray: [String]!
     var eggCountArray: [Int]!
+    var waterCountArray: [Double]!
+    var feedCountArray: [Double]!
     
     var dateArray: [Date]!
     var dateSubtractedFloatArray: [Float]!
@@ -30,8 +32,6 @@ class ViewController: UIViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
         
-        //TODO
-        //Lei will give me this
         /*dateStringArray = [String]()
         dateStringArray.append("2017/01/27")
         dateStringArray.append("2017/01/28")
@@ -55,9 +55,11 @@ class ViewController: UIViewController {
         //let point2 = (x: 6.0, y: 8.0)
         //let point3 = (x: 3.0, y: 14.0)
         var array1: Array<(x: Double, y: Double)> = Array()
+        var i = 0
         for dateObject in dateArray{
             let secondsSinceFirstDay = dateObject.timeIntervalSince1970-secondsToSubtract
-            array1.append((x: secondsSinceFirstDay, y: Double(Int(arc4random_uniform(50)))))
+            array1.append((x: secondsSinceFirstDay, y: Double(eggCountArray[i])))
+            i+=1
         }
         let series = ChartSeries(data: array1)
         
@@ -74,11 +76,39 @@ class ViewController: UIViewController {
         chart.xLabels = dateSubtractedFloatArray
         chart.xLabelsFormatter = { self.convertSubtractedSince1970ToDateString(subtractedSecondsSince1970: $1) }
         
-        //TODO: Implement y labels
+        var yLabelEggArray = [Float]()
+        let maxEggValue = eggCountArray.max()!
+        for i in 0...maxEggValue {
+            yLabelEggArray.append(Float(i))
+        }
+        chart.yLabels = yLabelEggArray
+        chart.yLabelsFormatter = { String(Int($1)) }
         
         chart.add(series)
         
         view.addSubview(chart)
+        
+        //Labels for eggs chart
+        let yAxisEggsLabel = UILabel(frame: CGRect(x: -10, y: view.frame.height*0.45+30, width: 60, height: 40))
+        yAxisEggsLabel.text = "Eggs"
+        yAxisEggsLabel.textAlignment = .center
+        yAxisEggsLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi/2)
+        view.addSubview(yAxisEggsLabel)
+        
+        let xAxisEggsLabel = UILabel(frame: CGRect(x: view.frame.width*0.5-30, y: view.frame.height*0.9, width: 60, height: 40))
+        xAxisEggsLabel.text = "Date"
+        xAxisEggsLabel.textAlignment = .center
+        view.addSubview(xAxisEggsLabel)
+        
+        /*let chart2 = Chart(frame: CGRect(x: view.frame.width*0.1, y: view.frame.height*0.5, width: view.frame.width*0.8, height: view.frame.height*0.8))
+        
+        chart2.xLabels = dateSubtractedFloatArray
+        chart2.xLabelsFormatter = { self.convertSubtractedSince1970ToDateString(subtractedSecondsSince1970: $1) }
+        
+        chart2.yLabels = yLabelEggArray
+        chart2.yLabelsFormatter = { String(Int($1)) }
+        
+        view.addSubview(chart2)*/
     }
     
     
@@ -86,7 +116,7 @@ class ViewController: UIViewController {
     func convertSubtractedSince1970ToDateString(subtractedSecondsSince1970: Float) -> String{
         let date = NSDate(timeIntervalSince1970: Double(subtractedSecondsSince1970)+leastSecondsSince1970())
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
+        dateFormatter.dateFormat = "MM/dd"
         let dateString = dateFormatter.string(from: date as Date)
         return dateString
     }
