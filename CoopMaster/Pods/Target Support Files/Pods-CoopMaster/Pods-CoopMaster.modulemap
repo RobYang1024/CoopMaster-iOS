@@ -1,0 +1,6 @@
+framework module Pods_CoopMaster {
+  umbrella header "Pods-CoopMaster-umbrella.h"
+
+  export *
+  module * { export * }
+}
