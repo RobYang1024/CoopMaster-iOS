@@ -11,28 +11,34 @@ import SwiftChart
 
 class ViewController: UIViewController {
 
-    var dateArray: [Date]!
     var dateStringArray: [String]!
+    var eggCountArray: [Int]!
+    
+    var dateArray: [Date]!
     var dateSubtractedFloatArray: [Float]!
     var dateFloatArray: [Float]!
-    var eggCountArray: [Int]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let defaults = UserDefaults.standard
+        let dateStringArray = defaults.stringArray(forKey: "date") ?? [String]()
+        let eggCountArray = defaults.array(forKey: "numberOfEggs") as? [Int] ?? [Int]()
         
         view.backgroundColor = .white
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
         
+        //TODO
         //Lei will give me this
-        dateStringArray = [String]()
+        /*dateStringArray = [String]()
         dateStringArray.append("2017/01/27")
         dateStringArray.append("2017/01/28")
         dateStringArray.append("2017/01/29")
         dateStringArray.append("2017/01/30")
         dateStringArray.append("2017/01/31")
-        dateStringArray.append("2017/02/01")
+        dateStringArray.append("2017/02/01")*/
         
         dateArray = [Date]()
         //Append Date objects from dateStringArray to dateArray

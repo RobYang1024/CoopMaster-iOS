@@ -11,6 +11,9 @@
 		2A6D21F21E3D1B1900A62596 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6D21F11E3D1B1900A62596 /* ViewController.swift */; };
 		2A6D21F71E3D1B1900A62596 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A6D21F61E3D1B1900A62596 /* Assets.xcassets */; };
 		2A6D21FA1E3D1B1900A62596 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A6D21F81E3D1B1900A62596 /* LaunchScreen.storyboard */; };
+		2ACA9F8E1E3D9519004C83CE /* EggCounterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACA9F8B1E3D9519004C83CE /* EggCounterController.swift */; };
+		2ACA9F8F1E3D9519004C83CE /* PushInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACA9F8C1E3D9519004C83CE /* PushInfoController.swift */; };
+		2ACA9F901E3D9519004C83CE /* TitleScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACA9F8D1E3D9519004C83CE /* TitleScreenController.swift */; };
 		BBA481ED6BDD464F78DC05F1 /* Pods_CoopMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693F44EF79F355338A9B6AFE /* Pods_CoopMaster.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,6 +25,9 @@
 		2A6D21F61E3D1B1900A62596 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A6D21F91E3D1B1900A62596 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A6D21FB1E3D1B1900A62596 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2ACA9F8B1E3D9519004C83CE /* EggCounterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EggCounterController.swift; sourceTree = "<group>"; };
+		2ACA9F8C1E3D9519004C83CE /* PushInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushInfoController.swift; sourceTree = "<group>"; };
+		2ACA9F8D1E3D9519004C83CE /* TitleScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleScreenController.swift; sourceTree = "<group>"; };
 		693F44EF79F355338A9B6AFE /* Pods_CoopMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoopMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87974292D2EDB51229077A48 /* Pods-CoopMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoopMaster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoopMaster/Pods-CoopMaster.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +70,9 @@
 				2A6D21F61E3D1B1900A62596 /* Assets.xcassets */,
 				2A6D21F81E3D1B1900A62596 /* LaunchScreen.storyboard */,
 				2A6D21FB1E3D1B1900A62596 /* Info.plist */,
+				2ACA9F8B1E3D9519004C83CE /* EggCounterController.swift */,
+				2ACA9F8C1E3D9519004C83CE /* PushInfoController.swift */,
+				2ACA9F8D1E3D9519004C83CE /* TitleScreenController.swift */,
 			);
 			path = CoopMaster;
 			sourceTree = "<group>";
@@ -207,8 +216,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ACA9F8E1E3D9519004C83CE /* EggCounterController.swift in Sources */,
 				2A6D21F21E3D1B1900A62596 /* ViewController.swift in Sources */,
 				2A6D21F01E3D1B1900A62596 /* AppDelegate.swift in Sources */,
+				2ACA9F8F1E3D9519004C83CE /* PushInfoController.swift in Sources */,
+				2ACA9F901E3D9519004C83CE /* TitleScreenController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +374,7 @@
 				2A6D22001E3D1B1900A62596 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
